@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: formation
+spec:
+  selector:
+    matchLabels:
+      app: formation
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        editor: vscode
+        app: formation
+    spec:
+      containers:
+      - name: formation
+        image: formation
+        ports:
+        - containerPort: 80
