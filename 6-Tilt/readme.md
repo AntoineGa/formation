@@ -31,7 +31,7 @@ change the permission for $HOME/.kube by doing
 sudo chmod 777 $HOME/.kube
 ```
 
-```
+```bash
 kind create cluster --config kind-config.yaml --name formation
 
 tilt up
@@ -41,6 +41,12 @@ go to http://localhost:8080/
 
 kind delete cluster --name formation
 ```
+or
 
-
-
+```bash
+cd kind
+ ./kind-with-registry.sh 
+kind get clusters
+kind get nodes
+kind delete cluster --name kind
+```
