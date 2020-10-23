@@ -52,6 +52,7 @@ kind: Cluster
 apiVersion: kind.x-k8s.io/v1alpha4
 nodes:
 - role: control-plane
+- role: worker
   extraPortMappings:
   - containerPort: 5080
     hostPort: 5080

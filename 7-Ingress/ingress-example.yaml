@@ -55,6 +55,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: ambassador
 spec:
+  prefix:
   rules:
   - http:
       paths:
@@ -66,4 +67,11 @@ spec:
         backend:
           serviceName: bar-service
           servicePort: 5678
----
+      - path: /formation
+        backend:
+          serviceName: formation-service
+          servicePort: 80
+      - path: /
+        backend:
+          serviceName: formation-service
+          servicePort: 80

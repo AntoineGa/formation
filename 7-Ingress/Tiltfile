@@ -1,5 +1,7 @@
 load('ext://namespace', 'namespace_create', 'namespace_inject')
 
+allow_k8s_contexts('kind-kind')
+
 namespace_create('ambassador')
 
 k8s_yaml('ambassador-operator-crds.yaml')
@@ -19,3 +21,5 @@ k8s_resource('ambassador-operator', objects=[
 
 k8s_resource(new_name='ingress', objects=['example-ingress'], resource_deps=['ambassador-operator'])
 
+docker_build('formation', '.')
+k8s_yaml('deployment.yaml')

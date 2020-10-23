@@ -1,3 +1,15 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: formation-service
+spec:
+  selector:
+    app: formation
+  ports:
+  - name: formation-service
+  # Default port used by the image
+    port: 80
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
