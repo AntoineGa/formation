@@ -1,6 +1,14 @@
 # using arkade
 
-in case of issues for finding elements in PATH, chage permission:
+in case of issues for finding elements in PATH, either
+
+modify your PATH by doing
+
+```bash
+export PATH=$PATH:$HOME/.arkade/bin/
+```
+
+or change permission:
 
 ```bash
 nano ~/.profile

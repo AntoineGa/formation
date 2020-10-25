@@ -1,4 +1,4 @@
 allow_k8s_contexts('kind-kind')
-docker_build('formation', '.')
-k8s_yaml('deployment.yaml')
+docker_build('formation', './src')
+k8s_yaml('./src/deployment.yaml')
 k8s_resource('formation', port_forwards='8080:80')

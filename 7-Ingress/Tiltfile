@@ -21,5 +21,5 @@ k8s_resource('ambassador-operator', objects=[
 
 k8s_resource(new_name='ingress', objects=['example-ingress'], resource_deps=['ambassador-operator'])
 
-docker_build('formation', '.')
-k8s_yaml('deployment.yaml')
+docker_build('formation', './src')
+k8s_yaml('./src/deployment.yaml')
